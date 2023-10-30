@@ -1,8 +1,2 @@
 #!/bin/bash
-
-#set the PYCODE environmental variable
-
-export PYCODE='print(f"Best School: {88+10}")'
-
 python3 -c "$PYCODE"
-
