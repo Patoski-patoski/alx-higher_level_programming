@@ -1,0 +1,10 @@
+#!/usr/bin/python3
+
+for i in range(100):
+    i = str(i)
+    if len(i) == 1:
+        print("0{}".format(i), end=", ")
+    elif i != '99':
+        print("{}".format(i), end=", ")
+    else:
+        print("99")
