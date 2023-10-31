@@ -7,7 +7,7 @@ great_than_5 = "and is greater than 5"
 if number >= 0:
     last_digit = number % 10
 else:
-    last_digit = (-number % 10)
+    last_digit = -(-number % 10)
 
 if last_digit > 5:
     print("Last digit of {} is {} {}".format(number, last_digit, great_than_5))
