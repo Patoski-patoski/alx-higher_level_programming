@@ -3,4 +3,4 @@
 for char in range(122, 96, -1):
     if char % 2:
         char -= 32
-    print(chr(char), end="")
+    print("{}".format(chr(char)), end="")
