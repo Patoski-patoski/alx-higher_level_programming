@@ -16,4 +16,4 @@ if __name__ == "__main__":
         print("{} arguments".format(len_of_argv))
         while count < len_of_argv + 1:
             print("{}: {}".format(count, sys.argv[count]))
-            count += 1i
+            count += 1
