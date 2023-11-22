@@ -4,6 +4,8 @@ import sys
 
 
 def safe_print_integer_err(value):
+    if not value:
+        return False
     try:
         print("{:d}".format(value))
         return value
