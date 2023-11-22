@@ -4,7 +4,7 @@ import sys
 
 
 def safe_print_integer_err(value):
-    if not value:
+    if value == None:
         return False
     try:
         print("{:d}".format(value))
