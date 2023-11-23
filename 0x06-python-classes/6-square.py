@@ -32,9 +32,7 @@ class Square:
             self.__size = value
 
     def my_print(self):
-        if self.__position[1] > 0:
-            pass
-        elif self.__size == 0:
+        if self.__size == 0:
             print()
         else:
             print("\n" * self.__position[1], end="")
