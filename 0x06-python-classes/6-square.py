@@ -1,11 +1,11 @@
 #!/usr/bin/python3
 
-''' a class Square that defines a square by: (based on 1-square.py) '''
+'''A class Square that defines a square by: (based on 1-square.py)'''
 
 
 class Square:
 
-    ''' Square- the class that defines a square'''
+    '''Square- the class that defines a square'''
     def __init__(self, size=0, position=(0, 0)):
         if not isinstance(size, int):
             raise TypeError("size must be an integer")
@@ -36,7 +36,8 @@ class Square:
             print()
         else:
             print("\n" * self.__position[1], end="")
-            print((" " * self.__position[0] + "#" * self.__size + "\n") * self.__size, end="")
+            print((" " * self.__position[0] + "#" * self.__size + "\n") *
+                  self.__size, end="")
 
     @property
     def position(self):
@@ -46,6 +47,6 @@ class Square:
     def position(self, value):
         if not isinstance(value, tuple) or len(value) != 2 or \
                 not all(isinstance(n, int) and n >= 0 for n in value):
-                    raise TypeError("position must be a tuple of 2 positive integers")
+            raise TypeError("position must be a tuple of 2 positive integers")
         else:
             self.__position = value
