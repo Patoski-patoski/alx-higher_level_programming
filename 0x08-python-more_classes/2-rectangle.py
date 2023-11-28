@@ -1,6 +1,11 @@
 #!/usr/bin/python3
 
 
+"""
+0-rectangle module - contains Rectangle() class
+"""
+
+
 class Rectangle:
 
     """ A class representing a rectangle.
