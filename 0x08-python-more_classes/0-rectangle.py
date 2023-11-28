@@ -1,9 +1,10 @@
 #!usr/bin/python3
 
-""" Write an empty class Rectangle that defines a rectangle """
-
+"""
+0-rectangle.py module - contains class Rectangle
+"""
 
 class Rectangle:
 
-    """Rectangle- the class to be define"""
+    """Rectangle- an empty class that defines the rectangle"""
     pass
