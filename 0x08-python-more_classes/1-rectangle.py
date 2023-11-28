@@ -5,7 +5,7 @@
 """
 
 
-class Rectangle():
+class Rectangle:
 
     """ A class representing a rectangle.
 
@@ -19,13 +19,6 @@ class Rectangle():
     """
 
     def __init__(self, width=0, height=0):
-
-        """ Initializer for the Rectangle class.
-
-        Args:
-            width (int): The width of the rectangle (default: 0).
-            height (int): The heigth of the rectangle (default: 0).
-        """
         self.__width = width
         self.__height = height
 
