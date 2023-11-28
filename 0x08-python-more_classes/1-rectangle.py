@@ -1,5 +1,11 @@
 #!/usr/bin/python3
 
+
+"""
+1-rectangle module - contains Rectangle() class
+"""
+
+
 class Rectangle:
 
     def __init__(self, width=0, height=0):
