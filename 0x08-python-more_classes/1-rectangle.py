@@ -1,8 +1,7 @@
 #!/usr/bin/python3
 
-
 """
-1-rectangle- contains Rectangle() class
+0-rectangle module - contains Rectangle() class
 """
 
 
