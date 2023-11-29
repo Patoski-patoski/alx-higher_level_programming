@@ -1,70 +1,125 @@
 The 2-matrix_divided module
 ===========================
 
-
 Using matrix_divided
+---------------------
+
 -------------------
-
-
+Importing function:
+-------------------
 >>> matrix_divided = __import__('2-matrix_divided').matrix_divided
 
------------------------------
-Testing Documentation length:
------------------------------
+----------------
+Defining matrix:
+----------------
+>>> matrix = [\
+...     [1, 2, 3],
+...     [4, 5, 6]
+... ]
 
->>> l1 = __import__("2-matrix_divided").__doc__
->>> l2 = __import__("2-matrix_divided").matrix_divided.__doc__
+--------------------------------
+checking correct number of args:
+--------------------------------
 
->>> len(l1) > 1
-True
+>>> matrix_divided(matrix, 2)
+[[0.5, 1.0, 1.5], [2.0, 2.5, 3.0]]
 
->>> len(l2) > 1
-True
+>>> matrix_divided(matrix, 5)
+[[0.2, 0.4, 0.6], [0.8, 1.0, 1.2]]
+
+>>> matrix_divided(matrix, -5)
+[[-0.2, -0.4, -0.6], [-0.8, -1.0, -1.2]]
+
+----------------
+checking Floats:
+----------------
+>>> matrix_divided(matrix, .5)
+[[2.0, 4.0, 6.0], [8.0, 10.0, 12.0]]
+
+>>> matrix_divided(matrix, 0.5)
+[[2.0, 4.0, 6.0], [8.0, 10.0, 12.0]]
+
+>>> matrix_divided(matrix, float('inf'))
+[[0.0, 0.0, 0.0], [0.0, 0.0, 0.0]]
+
+>>> matrix_divided(matrix, float('nan'))
+[[nan, nan, nan], [nan, nan, nan]]
+
+>>> matrix_divided(matrix, 0)
+Traceback (most recent call last):
+  ...
+ZeroDivisionError: division by zero
+
+-----------------------------------
+Checking amount of arguments passed:
+-----------------------------------
+>>> matrix_divided()
+Traceback (most recent call last):
+  ...
+TypeError: matrix_divided() missing 2 required positional arguments: 'matrix' and 'div'
+>>> matrix_divided(None)
+Traceback (most recent call last):
+  ...
+TypeError: matrix_divided() missing 1 required positional argument: 'div'
+
+>>> matrix_divided(matrix)
+Traceback (most recent call last):
+  ...
+TypeError: matrix_divided() missing 1 required positional argument: 'div'
+
+>>> matrix_divided(30)
+Traceback (most recent call last):
+  ...
+TypeError: matrix_divided() missing 1 required positional argument: 'div'
+
+>>> matrix_divided([[]], 15, 100)
+Traceback (most recent call last):
+  ...
+TypeError: matrix_divided() takes 2 positional arguments but 3 were given
+
+--------------------------
+checking incorrect input;
+--------------------------	
+>>> matrix_divided(30, 30)
+Traceback (most recent call last):
+  ...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+>>> matrix_divided(10.5, 4)
+Traceback (most recent call last):
+  ...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+>>> matrix_divided(None, 4)
+Traceback (most recent call last):
+  ...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+---------------------------------------------
+checking non int/ float elements in matrix:
+---------------------------------------------
+>>> matrix[1] = [float('nan'), 8, 25]
+
+>>> matrix_divided(matrix, 10)
+[[0.1, 0.2, 0.3], [nan, 0.8, 2.5]]
+
+>>> matrix[1] = [float('inf'), 8, 25]
+
+>>> matrix_divided(matrix, 10)
+[[0.1, 0.2, 0.3], [inf, 0.8, 2.5]]
+
+>>> matrix[1] = ['none43ert', 8, 25]
+>>> matrix_divided(matrix, 10)
+Traceback (most recent call last):
+  ...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
 
 ----------------------
-Testing correct input:
+checking unequal rows:
 ----------------------
->>> matrix_divided(matrix, 3)
-[[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+>>> matrix[1] = [8, 25]
 
->>> add_integer(-10, 50)
-40
-
->>> add_integer(2)
-100
-
->>> add_integer(2.3, 3)
-5
-
-----------------------
-Testing invalid input:
-----------------------
->>> add_integer(2, 24, 10)
+>>> matrix_divided(matrix, 10)
 Traceback (most recent call last):
   ...
-TypeError: add_integer() takes from 1 to 2 positional arguments but 3 were given
-
->>> add_integer()
-Traceback (most recent call last):
-  ...
-TypeError: add_integer() missing 1 required positional argument: 'a'
-
->>> add_integer(None)
-Traceback (most recent call last):
-  ...
-TypeError: a must be an integer
-
->>> add_integer(float('nan'), 2)
-Traceback (most recent call last):
-...
-ValueError: cannot convert float NaN to integer
-
->>> add_integer(float('inf'), 2)
-Traceback (most recent call last):
-  ...
-OverflowError: cannot convert float infinity to integer
-
->>> add_integer("text", "text")
-Traceback (most recent call last):
-  ...
-TypeError: a must be an integer
+TypeError: Each row of the matrix must have the same size
