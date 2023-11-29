@@ -1,0 +1,92 @@
+The 4-print_square module
+=========================
+
+Using print_square
+------------------
+
+--------------------
+Importing function:
+--------------------
+>>> print_square = __import__('4-print_square').print_square
+
+-----------------------------
+checking documentation input
+-----------------------------
+>>> doc_mod = __import__('4-print_square').__doc__
+>>> len(doc_mod) > 1
+True
+
+>>> func_mod = __import__('4-print_square').print_square.__doc__
+>>> len(func_mod) > 1
+True
+
+-----------------------
+checking correct input
+-----------------------
+>>> print_square(4)
+####
+####
+####
+####
+>>> print_square(10)
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+##########
+
+>>> print_square(0)
+
+>>> print_square(False)
+
+>>> print_square(1)
+#
+
+>>> print_square(True)
+#
+
+--------------------------
+Checking incorrect output
+--------------------------
+>>> print_square(-1)
+Traceback (most recent call last):
+  ...
+ValueError: size must be >= 0
+
+>>> print_square("4")
+Traceback (most recent call last):
+  ...
+TypeError: size must be an integer
+>>> print_square("inf")
+Traceback (most recent call last):
+  ...
+TypeError: size must be an integer
+
+>>> print_square(int)
+Traceback (most recent call last):
+ ...
+TypeError: size must be an integer
+
+>>> print_square("int)                                                              
+Traceback (most recent call last):                                                 
+  ...                                                                               
+SyntaxError: EOL while scanning string literal
+
+---------------------------
+Checking number of arguments
+---------------------------
+
+>>> print_square()
+Traceback (most recent call last):
+  ...
+TypeError: print_square() missing 1 required positional argument: 'size'
+
+>>> print_square(12, 45)
+Traceback (most recent call last):
+  ...
+TypeError: print_square() takes 1 positional argument but 2 were given
