@@ -1,0 +1,74 @@
+The 0-add_integer module
+========================
+
+Using add_integer function
+=========================
+
+>>> add_integer = __import__('0-add_integer').add_integer
+
+-----------------------------
+Testing documentation length
+----------------------------
+
+------ modules ------
+>>> mod_1 = __import__("0-add_integer").__doc__
+>>> len(mod_1) > 1
+True
+
+------ functions -----
+>>> func_1 = __import__("0-add_integer").add_integer.__doc__
+>>> len(func_1) > 1
+True
+
+------------------
+Test correct input
+------------------
+
+>>> add_integer(12, 12)
+24
+
+>>> add_integer(100,44)
+144
+
+>>> add_integer(2)
+100
+
+>>> add_integer(12.5, 12)
+24
+
+>>> add_integer(55.55)
+153
+
+----------------------
+Test incorrect input
+---------------------
+
+>>> add_integer(12, "string")
+Traceback (most recent call last):
+ ...
+TypeError: b must be an integer
+
+>>> add_integer(12, return)
+Traceback (most recent call last):
+ ...
+SyntaxError: invalid syntax
+
+>>> add_integer()
+Traceback (most recent call last):
+ ...
+TypeError: add_integer() missing 1 required positional argument: 'a'
+
+>>> add_integer(int(3), float('inf'))
+Traceback (most recent call last):
+ ...
+OverflowError: cannot convert float infinity to integer
+
+>>> add_integer(12, 15, 2)
+Traceback (most recent call last):
+ ...
+TypeError: add_integer() takes from 1 to 2 positional arguments but 3 were given
+
+>>> add_integer(12, love)
+Traceback (most recent call last):
+ ...
+NameError: name 'love' is not defined
