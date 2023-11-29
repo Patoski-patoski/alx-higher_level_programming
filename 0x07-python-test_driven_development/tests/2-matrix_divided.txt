@@ -12,7 +12,7 @@ Importing function:
 ----------------
 Defining matrix:
 ----------------
->>> matrix = [\
+>>> matrix = [
 ...     [1, 2, 3],
 ...     [4, 5, 6]
 ... ]
@@ -83,30 +83,30 @@ checking incorrect input;
 >>> matrix_divided(30, 30)
 Traceback (most recent call last):
   ...
-TypeError: matrix must be a matrix (list of lists) of integers/floats
+TypeError: 'int' object is not iterable
 
 >>> matrix_divided(10.5, 4)
 Traceback (most recent call last):
   ...
-TypeError: matrix must be a matrix (list of lists) of integers/floats
+TypeError: 'float' object is not iterable
 
 >>> matrix_divided(None, 4)
 Traceback (most recent call last):
   ...
-TypeError: matrix must be a matrix (list of lists) of integers/floats
+TypeError: 'NoneType' object is not iterable
 
 ---------------------------------------------
 checking non int/ float elements in matrix:
 ---------------------------------------------
 >>> matrix[1] = [float('nan'), 8, 25]
-
 >>> matrix_divided(matrix, 10)
 [[0.1, 0.2, 0.3], [nan, 0.8, 2.5]]
 
->>> matrix[1] = [float('inf'), 8, 25]
 
+>>> matrix[1] = [float('inf'), 8, 25]
 >>> matrix_divided(matrix, 10)
 [[0.1, 0.2, 0.3], [inf, 0.8, 2.5]]
+
 
 >>> matrix[1] = ['none43ert', 8, 25]
 >>> matrix_divided(matrix, 10)
@@ -118,8 +118,7 @@ TypeError: matrix must be a matrix (list of lists) of integers/floats
 checking unequal rows:
 ----------------------
 >>> matrix[1] = [8, 25]
-
 >>> matrix_divided(matrix, 10)
 Traceback (most recent call last):
-  ...
+ ...
 TypeError: Each row of the matrix must have the same size
