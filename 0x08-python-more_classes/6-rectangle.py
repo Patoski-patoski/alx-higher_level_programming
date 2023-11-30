@@ -8,7 +8,6 @@
 
 class Rectangle:
 
-
     """ A class representing a rectangle.
 
     Args:
