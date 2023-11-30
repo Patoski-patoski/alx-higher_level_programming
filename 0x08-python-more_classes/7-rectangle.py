@@ -27,7 +27,7 @@ class Rectangle():
 
     @width.setter
     def width(self, value):
-        """setter property width- 
+        """setter property width-
         sets value to private instance attribute __height
         """
         if not isinstance(value, int):
@@ -38,7 +38,7 @@ class Rectangle():
 
     @property
     def height(self):
-        """getter peoperty height - returns private instance __height"""  
+        """getter peoperty height - returns private instance __height"""
         return self.__height
 
     @height.setter
@@ -47,30 +47,35 @@ class Rectangle():
         private instance attribute __height"""
 
         if not isinstance(value, int):
-             raise TypeError('width must be an integer')
+            raise TypeError('width must be an integer')
         if value < 0:
             raise ValueError('width must be >= 0')
         self.__height = value
-        def area(self):  """area: public instance method that returns the rectangle area"""
+
+        def area(self):
+            """area: public instance method that returns the rectangle area"""
         return ((self.__width) * (self.__height))
 
     def perimeter(self):
-         """perimeter: public instance method that
-         returns the rectangle perimeter"""
+        """perimeter: public instance method that
+        returns the rectangle perimeter"""
 
-         if self.__width == 0 or self.__height == 0:
-             return 0
-         return (2 * (self.__width + self.__height))
+        if self.__width == 0 or self.__height == 0:
+            return 0
+        return (2 * (self.__width + self.__height))
 
     def __str__(self):
-        """__str__: instance method that return an informal string    representation of an instance"""
+        """__str__: instance method that return an informal string
+        representation of an instance"""
+
         rect = str()
         for _ in range(self.__height):
             rect += str(self.print_symbol) * self.__width + '\n'
         return rect[:-1]
 
     def __repr__(self):
-        """__repr__: instance method that returns a formal string representation of an instance"""
+        """__repr__: instance method that returns a
+        formal string representation of an instance"""
         return f"Rectangle{(self.__width, self.__height)}"
 
     def __del__(self):
