@@ -1,9 +1,9 @@
 #!/usr/bin/python3
 
-""" The 4-inherits_from module"""
+""" inherits_from module"""
 
 
-def inherits_froms(obj, a_class):
+def inherits_from(obj, a_class):
 
     """inherits_from: returns True if the object is an instance of,
     or inherited from the specified class
@@ -15,5 +15,8 @@ def inherits_froms(obj, a_class):
     Return:
         True, otherwise False
     """
+
     def inherits_from(obj, a_class):
-        return type(obj) is not a_class and issubclass(type(obj), a_class)
+        if type(obj) is not a_class and issubclass(type(obj), a_class):
+            return True
+        return False
