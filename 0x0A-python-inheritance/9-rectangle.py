@@ -30,12 +30,3 @@ class Rectangle(BaseGeometry):
 
     def __str__(self):
         return f"[{self.__class__.__name__}] {self.__width}/{self.__height}"
-
-
-class Square(Rectangle):
-
-    def __init__(self, size):
-        super()._init__(width=size, height=size)
-
-    def area(self):
-        return self.__width * self.__height
