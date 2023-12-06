@@ -7,8 +7,8 @@ def from_json_string(my_str):
 
     """to_json_string-def- to_json_string(my_obj)
     Args:
-        obj (str): the object
+        my_str(str): the string
     Return:
          returns the JSON string representation
     """
-    return json.loads(my_obj)
+    return json.loads(my_str)
