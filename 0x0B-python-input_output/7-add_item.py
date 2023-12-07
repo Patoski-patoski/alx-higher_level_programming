@@ -24,9 +24,9 @@ if len(argv) > 1:
     if not exists(filename):
         save_to_json_file([], filename)
 
-        lists = load_from_json_file(filename)
-        lists.extend(argv[1:])
-        save_to_json_file(lists, filename)
+    lists = load_from_json_file(filename)
+    lists.extend(argv[1:])
+    save_to_json_file(lists, filename)
 
 else:
     save_to_json_file([], filename)
