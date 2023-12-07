@@ -3,7 +3,8 @@
 """The 11-square module"""
 
 
-Rectangle = __import__("10-square").Rectangle
+Rectangle = __import__("9-Rectangle").Rectangle
+
 
 
 class Square(Rectangle):
@@ -12,8 +13,8 @@ class Square(Rectangle):
     def __init__(self, size):
         super().__init__(width=size, height=size)
 
-    def __str__(self):
-        return f"[square] {self._Rectangle__width}/{self._Rectangle__height}"
-
     def area(self):
         return self._Rectangle__width * self._Rectangle__height
+
+    def __str__(self):
+        return f"[square] {self._Rectangle__width}/{self._Rectangle__height}"
