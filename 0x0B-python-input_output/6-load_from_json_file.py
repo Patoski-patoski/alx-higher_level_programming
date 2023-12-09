@@ -4,6 +4,7 @@
 load_from_json_file function
 """
 import json
+import os
 
 
 def load_from_json_file(filename):
@@ -16,4 +17,6 @@ def load_from_json_file(filename):
         a deserialized output
     """
     with open(filename, 'r', encoding='utf-8') as f:
-        return (json.load(f))
+        if os.path.exists(filename):
+            return (json.load(f))
+        return []
