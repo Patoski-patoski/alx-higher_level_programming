@@ -20,17 +20,18 @@ save_to_json_file = __import__('5-save_to_json_file').save_to_json_file
 load_from_json_file = __import__('6-load_from_json_file').load_from_json_file
 
 my_obj = []
+filename = 'add_item.json'
 
 # Append command line arguments to my_obj
 for arg in argv[1:]:
     my_obj.append(arg)
 
 # Load existing data from file
-loaded = load_from_json_file('add_item.json')
+loaded = load_from_json_file(filename)
 
 # Append new data to the loaded list
 for arg in my_obj:
     loaded.append(arg)
 
 # Save the updated list to the file
-save_to_json_file(loaded, 'add_item.json')
+save_to_json_file(loaded, filename)
