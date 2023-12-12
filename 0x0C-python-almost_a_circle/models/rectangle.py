@@ -10,6 +10,15 @@ class Rectangle(Base):
 
     """A Rectangle class"""
     def __init__(self, width, height, x=0, y=0, id=None):
+        """Initialize a Rectangle object.
+        Args:
+            width (int): The width of the rectangle.
+            height (int): The height of the rectangle.
+            x (int): The x-coordinate of the top-left corner.
+            y (int): The y-coordinate of the top-left corner.
+            id (int): The unique identifier for the object. If not provided,
+            it will be automatically assigned.
+        """
         self.__width = width
         self.__height = height
         self.__x = x
