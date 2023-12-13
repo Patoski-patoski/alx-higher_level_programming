@@ -10,7 +10,17 @@ class Rectangle(Base):
 
     """A Rectangle class"""
     def __init__(self, width, height, x=0, y=0, id=None):
-        """Initialize a Rectangle object.
+        if not isinstance(height, int):
+            raise TypeError("height must be an integer")
+        if not isinstance(width, int):
+            raise TypeError("width must be an integer")
+        for attr_name, attr_value in locals().items():
+            if attr_name in ['width', 'height'] and attr_value <= 0:
+                raise ValueError(f"{attr_name} must be > 0")
+            if attr_name in ['x', 'y'] and attr_value < 0:
+                raise ValueError(f"{attr_name} must be >= 0")
+
+        """Initialize a Rectangle object
         Args:
             width (int): The width of the rectangle.
             height (int): The height of the rectangle.
