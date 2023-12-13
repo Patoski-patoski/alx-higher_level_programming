@@ -19,6 +19,8 @@ class Rectangle(Base):
                 raise ValueError(f"{attr_name} must be > 0")
             if attr_name in ['x', 'y'] and attr_value < 0:
                 raise ValueError(f"{attr_name} must be >= 0")
+            if not isinstance(x, int):
+                 raise TypeError("x must be an integer")
 
         """Initialize a Rectangle object
         Args:
@@ -70,21 +72,22 @@ class Rectangle(Base):
 
     @x.setter
     def x(self, x):
-        """"a function to get x"""
+        """a function to get x"""
         if not isinstance(x, int) and type(x) is not int:
             raise TypeError("x must be an integer")
-        if x < 0:
+        elif x < 0:
             raise ValueError("x must be > 0")
-        self.__x = x
+        else:
+            self.__x = x
 
     @property
     def y(self):
-        """ "a function to get y"""
+        """a function to get y"""
         return self.__y
 
     @y.setter
     def y(self, y):
-        """"a function to get y"""
+        """a function to get y"""
         if not isinstance(y, int):
             raise TypeError("x must be an integer")
         if y < 0:
