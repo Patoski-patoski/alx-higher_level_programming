@@ -109,8 +109,9 @@ class Rectangle(Base):
         return (f"[Rectangle] ({self.id}) {self.x}/{self.y} - "
                 f"{self.width}/{self.height}")
 
-
     def display(self):
         """Test to display hash(#)"""
+        for _ in range(self.y):
+            print()
         for _ in range(self.height):
-            print('#' * self.width)
+            print(" " * self.y + '#' * self.width)
