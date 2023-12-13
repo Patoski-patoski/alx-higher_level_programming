@@ -105,11 +105,6 @@ class Rectangle(Base):
         return self.width * self.height
 
     def display(self):
-        h = self.height
-        w = self.width
-
-        while h > 0:
-            for _ in range(w):
-                print("#", end="")
-            h -= 1
-            print()
+        """Test to display hash(#)"""
+        for _ in range(self.height):
+            print('#' * self.width)
