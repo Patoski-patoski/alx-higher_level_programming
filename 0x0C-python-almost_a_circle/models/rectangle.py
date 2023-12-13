@@ -19,10 +19,10 @@ class Rectangle(Base):
             id (int): The unique identifier for the object. If not provided,
             it will be automatically assigned.
         """
-        self.__width = width
-        self.__height = height
-        self.__x = x
-        self.__y = y
+        self.width = width
+        self.height = height
+        self.x = x
+        self.y = y
         super().__init__(id)
 
     @property
@@ -33,6 +33,10 @@ class Rectangle(Base):
     @width.setter
     def width(self, width):
         """"a function to set the the width"""
+        if width <= 0:
+            raise ValueError("width must be > 0")
+        if not isinstance(width, int):
+            raise TypeError("width must be an integer")
         self.__width = width
 
     @property
@@ -43,6 +47,10 @@ class Rectangle(Base):
     @height.setter
     def height(self, height):
         """"a function to get the height"""
+        if not isinstance(height, int):
+            raise TypeError("height must be an integer")
+        if height <= 0:
+            raise ValueError("height must be > 0")
         self.__height = height
 
     @property
@@ -53,6 +61,10 @@ class Rectangle(Base):
     @x.setter
     def x(self, x):
         """"a function to get x"""
+        if not isinstance(x, int) and type(x) is not int:
+            raise TypeError("x must be an integer")
+        if x < 0:
+            raise ValueError("x must be > 0")
         self.__x = x
 
     @property
@@ -63,4 +75,8 @@ class Rectangle(Base):
     @y.setter
     def y(self, y):
         """"a function to get y"""
+        if not isinstance(y, int):
+            raise TypeError("x must be an integer")
+        if y < 0:
+            raise ValueError("x must be > 0")
         self.__y = y

@@ -4,7 +4,9 @@ from models.rectangle import Rectangle
 
 
 class TestRectangle(unittest.TestCase):
-    def test_increment(self):
+    """Test for Rectanle class"""
+
+    def test_attributes(self):
         """Test to check if id is correctly incremented"""
         r1 = Rectangle(1, 2)
         r2 = Rectangle(1, 2, 3)
@@ -32,6 +34,34 @@ class TestRectangle(unittest.TestCase):
         r1 = Rectangle(28, 21, 1, 2, 3)
 
         self.assertIsInstance(r1.x, int)
+
+    def test_setters(self):
+        """Test for setters and getters"""
+        r1 = Rectangle(100, 200, 300, 400, 500)
+
+        r1.width = 1
+        r1.height = 2
+        r1.x = 3
+        r1.y = 4
+        r1.id = 5
+
+        self.assertEqual(r1.width, 1)
+        self.assertEqual(r1.height, 2)
+        self.assertEqual(r1.x, 3)
+        self.assertEqual(r1.y, 4)
+        self.assertEqual(r1.id, 5)
+
+    def test_errors(self):
+        """Test for type and value errors for setters and getters"""
+        with self.assertRaises(TypeError):
+            r1 = Rectangle(1, "invalid", 7, -10, 9)
+
+        r2 = Rectangle(1, 3, 7, 10, 9)
+        with self.assertRaises(ValueError):
+            r2.y = -8
+
+        with self.assertRaises(TypeError):
+            r2.width = "Christ is Lord"
 
 
 if __name__ == '__main__':
