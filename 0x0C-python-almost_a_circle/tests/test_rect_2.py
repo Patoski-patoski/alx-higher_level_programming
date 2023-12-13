@@ -1,4 +1,6 @@
 import unittest
+import io
+import sys
 
 from models.rectangle import Rectangle
 
@@ -73,6 +75,22 @@ class TestRectangle(unittest.TestCase):
 
         r3 = Rectangle(8, 7, 0, 0, 12)
         self.assertEqual(r3.area(), 56)
+
+    def test_area(self):
+        """Test to display Hash(#)"""
+        r1 = Rectangle(3, 6, 2, 1, 3)
+
+    def test_display(self):
+        """Test to display hash(#)"""
+        r1 = Rectangle(3, 2, 7, 3, 2)
+        # Capture the output to stdout
+        capturedoutput = io.StringIO()
+        sys.stdout = capturedoutput
+        # Compare the captured output with the expected output
+        r1.display()
+        sys.stdout = sys.__stdout__
+        expected_output = "###\n###\n"
+        self.assertEqual(capturedoutput.getvalue(), expected_output)
 
 
 if __name__ == '__main__':

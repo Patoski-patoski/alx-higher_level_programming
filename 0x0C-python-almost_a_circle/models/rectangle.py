@@ -103,3 +103,13 @@ class Rectangle(Base):
     def area(self):
         """a function to check the area of Rectangle"""
         return self.width * self.height
+
+    def display(self):
+        h = self.height
+        w = self.width
+
+        while h > 0:
+            for _ in range(w):
+                print("#", end="")
+            h -= 1
+            print()
