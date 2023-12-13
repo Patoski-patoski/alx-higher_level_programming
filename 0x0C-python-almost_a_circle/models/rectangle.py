@@ -14,13 +14,18 @@ class Rectangle(Base):
             raise TypeError("height must be an integer")
         if not isinstance(width, int):
             raise TypeError("width must be an integer")
-        for attr_name, attr_value in locals().items():
-            if attr_name in ['width', 'height'] and attr_value <= 0:
-                raise ValueError(f"{attr_name} must be > 0")
-            if attr_name in ['x', 'y'] and attr_value < 0:
-                raise ValueError(f"{attr_name} must be >= 0")
-            if not isinstance(x, int):
-                 raise TypeError("x must be an integer")
+        if not isinstance(x, int):
+            raise TypeError("x must be an integer")
+        if not isinstance(y, int):
+            raise TypeError("y must be an integer")
+        if width <= 0:
+            raise ValueError("width must be > 0")
+        if height <= 0:
+            raise ValueError("height must be > 0")
+        if x < 0:
+            raise ValueError("x must be > 0")
+        if y < 0:
+            raise ValueError("y must be >= 0")
 
         """Initialize a Rectangle object
         Args:
