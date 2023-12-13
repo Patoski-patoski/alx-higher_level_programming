@@ -1,7 +1,3 @@
-#!/usr/bin/python3
-
-""" Test for rectangle module"""
-
 import unittest
 import io
 import sys
@@ -30,12 +26,13 @@ class TestRectangle(unittest.TestCase):
         """Test to check if id is assigned correctly"""
         r1 = Rectangle(100, 4)
         r2 = Rectangle(200, 21, 2)
-        self.assertEqual(r1.width, 100)
+        self.assertEqual(r1.id, 100)
         self.assertEqual(r2.x, 2)
 
     def test_type(self):
         """Test to check if id is of type int"""
-        self.assertIsInstance(self.r5.x, int)
+        r1 = Rectangle(28, 21, 1, 2, 3)
+        self.assertIsInstance(r1.x, int)
 
     def test_setters(self):
         """Test for setters and getters"""
@@ -76,7 +73,7 @@ class TestRectangle(unittest.TestCase):
         sys.stdout = capturedoutput
         self.r1.display()
         sys.stdout = sys.__stdout__
-        expected_output = "#\n#\n"
+        expected_output = "###\n###\n"
         self.assertEqual(capturedoutput.getvalue(), expected_output)
 
     def test_str(self):
@@ -87,3 +84,4 @@ class TestRectangle(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
