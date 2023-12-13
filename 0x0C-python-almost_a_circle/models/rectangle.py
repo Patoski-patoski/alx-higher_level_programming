@@ -108,3 +108,8 @@ class Rectangle(Base):
         """Test to display hash(#)"""
         for _ in range(self.height):
             print('#' * self.width)
+
+    def __str__(self):
+        """Test to  overriding the __str__ method"""
+        return (f"[Rectangle] ({self.id}) {self.x}/{self.y} - "
+                f"{self.width}/{self.height}")

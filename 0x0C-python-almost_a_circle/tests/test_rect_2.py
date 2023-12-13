@@ -92,6 +92,12 @@ class TestRectangle(unittest.TestCase):
         expected_output = "###\n###\n"
         self.assertEqual(capturedoutput.getvalue(), expected_output)
 
+    def test_str(self):
+        """test to override __str__"""
+        r = Rectangle(3, 2, 1, 4, 5)
+        expected_output = "[Rectangle] (5) 1/4 - 3/2"
+        self.assertEqual(str(r), expected_output)
+
 
 if __name__ == '__main__':
     unittest.main()
