@@ -52,7 +52,7 @@ class Rectangle(Base):
         """"a function to set the the width"""
         if width <= 0:
             raise ValueError("width must be > 0")
-       elif not isinstance(width, int):
+        elif not isinstance(width, int):
             raise TypeError("width must be an integer")
         else:
             self.__width = width
