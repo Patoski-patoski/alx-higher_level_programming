@@ -85,5 +85,20 @@ class TestRectangle(unittest.TestCase):
         expected_output = "[Rectangle] (5) 1/4 - 3/2"
         self.assertEqual(str(r), expected_output)
 
+    def test_var_args(self):
+        """Test for variable numbers of positional arguments (*args)"""
+        r1 = Rectangle(10, 10, 10, 10)
+
+        r1.update(89)
+        self.assertEqual(str(r1), "[Rectangle] (89) 10/10 - 10/10")
+
+        r1.update(89, 2, 3)
+        self.assertEqual(str(r1), "[Rectangle] (89) 10/10 - 2/3")                        
+
+        r1.update(89, 2, 3, 4, 5)
+        self.assertEqual(str(r1), "[Rectangle] (89) 4/5 - 2/3")
+
+
+
 if __name__ == '__main__':
     unittest.main()

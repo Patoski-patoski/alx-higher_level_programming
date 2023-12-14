@@ -115,3 +115,10 @@ class Rectangle(Base):
             print()
         for _ in range(self.height):
             print(" " * self.x + '#' * self.width)
+
+    def update(self, *args):
+        """Using enumerate() to update attributes using positional arguments"""
+
+        attributes = ["id", "width", "height", "x", "y"]
+        for i, arg in enumerate(args):
+            setattr(self, attributes[i], arg)
