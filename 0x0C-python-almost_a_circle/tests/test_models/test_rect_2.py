@@ -7,6 +7,7 @@ import io
 import sys
 from models.rectangle import Rectangle
 
+
 class TestRectangle(unittest.TestCase):
     """Test for Rectangle class"""
 
@@ -93,11 +94,18 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(str(r1), "[Rectangle] (89) 10/10 - 10/10")
 
         r1.update(89, 2, 3)
-        self.assertEqual(str(r1), "[Rectangle] (89) 10/10 - 2/3")                        
+        self.assertEqual(str(r1), "[Rectangle] (89) 10/10 - 2/3")
 
         r1.update(89, 2, 3, 4, 5)
         self.assertEqual(str(r1), "[Rectangle] (89) 4/5 - 2/3")
 
+        r2 = Rectangle(10, 10, 10, 10, 1)
+
+        r2.update(height=1)
+        self.assertEqual(str(r2), "[Rectangle] (1) 10/10 - 10/1")
+        
+        r2.update(x=1, height=2, y=3, width=4)
+        self.assertEqual(str(r2), "[Rectangle] (1) 1/3 - 4/2")
 
 
 if __name__ == '__main__':
