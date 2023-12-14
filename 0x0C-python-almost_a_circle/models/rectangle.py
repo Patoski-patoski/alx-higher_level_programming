@@ -116,9 +116,25 @@ class Rectangle(Base):
         for _ in range(self.height):
             print(" " * self.x + '#' * self.width)
 
-    def update(self, *args):
-        """Using enumerate() to update attributes using positional arguments"""
+    def update(self, *args, **kwargs):
+        """Update function that accepts positional and non-positional arguments
+        Args:
+            args (int): the positional argument
+            kwargs (object): the non-positional argument
+
+        Return:
+            Nothing
+        """
 
         attributes = ["id", "width", "height", "x", "y"]
-        for i, arg in enumerate(args):
-            setattr(self, attributes[i], arg)
+        if args and not kwargs:
+            for i, arg in enumerate(args):
+                setattr(self, attributes[i], arg)
+        else:
+            for key, value in kwargs.items():
+                if key == "id":
+                    setattr(self, key, value)
+                elif key in attributes:
+                    setattr(self, key, value)
+                else:
+                    raise ValueError(f"Invalid attribute: {key}")
