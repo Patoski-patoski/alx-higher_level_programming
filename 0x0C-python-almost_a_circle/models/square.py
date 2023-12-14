@@ -8,6 +8,8 @@ from models.rectangle import Rectangle
 class Square(Rectangle):
     """The Square class"""
     def __init__(self, size, x=0, y=0, id=None):
+        self.width = size
+        self.height = size
         """Initialization method
         Args:
             size (int): the size of square
