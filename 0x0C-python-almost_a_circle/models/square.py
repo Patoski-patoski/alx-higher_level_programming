@@ -7,7 +7,7 @@ from models.rectangle import Rectangle
 
 class Square(Rectangle):
     """The Square class"""
-    def __init__(self, size, x = 0, y = 0, id=None):
+    def __init__(self, size, x=0, y=0, id=None):
         """Initialization method
         Args:
             size (int): the size of square
@@ -17,9 +17,9 @@ class Square(Rectangle):
         Return:
             Nothing
          """
-        super().__init__(size, size, x, y, id) 
-         
-    def __str__ (self):
+        super().__init__(size, size, x, y, id)
+
+    def __str__(self):
         """Test to  overriding the __str__ method"""
         return f"[Square] ({self.id}) {self.x}/{self.y} - {self.width}"
 
