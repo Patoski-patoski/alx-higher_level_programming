@@ -13,7 +13,7 @@ class TestSquare(unittest.TestCase):
     def setUp(self):
         """Setting Up definitions"""
         self.s4 = Square(5, 4, 3, 2)
-        Base_nb__objects = 0
+        Base._Base__nb_objects = 0
 
     def test_initialization(self):
         """Test initialization of Square"""
@@ -50,8 +50,8 @@ class TestSquare(unittest.TestCase):
         self.assertEqual(self.s4.y, 7)
         self.assertEqual(self.s4.id, 20)
 
-    def test_str(self):
-        """Test to override __str__"""
+    def test_dictionary(self):
+        """Test to display dictionary representation"""
         r = Square(10, 2, 1)
         r_dict = r.to_dictionary()
         expected_output = {'id': 1, 'x': 2, 'size': 10, 'y': 1}

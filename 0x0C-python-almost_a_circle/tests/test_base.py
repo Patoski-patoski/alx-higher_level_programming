@@ -6,6 +6,10 @@ from models.base import Base
 class TestBase(unittest.TestCase):
     """Test cases for Rectangle class"""
 
+    def setUp(self):
+        """Set up default definition"""
+        Base._Base__nb_objects = 0
+
     def test_increment(self):
         """Test if id is incremented correctly."""
         b1 = Base()
