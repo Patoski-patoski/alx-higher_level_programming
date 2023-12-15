@@ -6,6 +6,7 @@ import unittest
 from models.square import Square
 from models.base import Base
 
+
 class TestSquare(unittest.TestCase):
     """the TestSquare class"""
 
@@ -48,7 +49,6 @@ class TestSquare(unittest.TestCase):
         self.assertEqual(self.s4.x, 5)
         self.assertEqual(self.s4.y, 7)
         self.assertEqual(self.s4.id, 20)
-
 
     def test_str(self):
         """Test to override __str__"""
