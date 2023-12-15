@@ -13,7 +13,7 @@ class Square(Rectangle):
         if not isinstance(size, int):
             raise TypeError("size must be an integer")
         self.width = size
-        self.height = size
+        self.height = self.width
         """Initialization method
         Args:
             size (int): the size of square
