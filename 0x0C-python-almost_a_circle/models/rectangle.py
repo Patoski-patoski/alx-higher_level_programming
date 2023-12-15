@@ -10,6 +10,17 @@ class Rectangle(Base):
 
     """A Rectangle class"""
     def __init__(self, width, height, x=0, y=0, id=None):
+
+        """Initialize a Rectangle object
+        Args:
+            width (int): The width of the rectangle.
+            height (int): The height of the rectangle.
+            x (int): The x-coordinate of the top-left corner.
+            y (int): The y-coordinate of the top-left corner.
+            id (int): The unique identifier for the object. If not provided,
+            it will be automatically assigned.
+        """
+
         if not isinstance(height, int):
             raise TypeError("height must be an integer")
         if not isinstance(width, int):
@@ -27,20 +38,11 @@ class Rectangle(Base):
         if y < 0:
             raise ValueError("y must be >= 0")
 
-        """Initialize a Rectangle object
-        Args:
-            width (int): The width of the rectangle.
-            height (int): The height of the rectangle.
-            x (int): The x-coordinate of the top-left corner.
-            y (int): The y-coordinate of the top-left corner.
-            id (int): The unique identifier for the object. If not provided,
-            it will be automatically assigned.
-        """
+        super().__init__(id)
         self.width = width
         self.height = height
         self.x = x
         self.y = y
-        super().__init__(id)
 
     @property
     def width(self):
@@ -134,7 +136,11 @@ class Rectangle(Base):
             for key, value in kwargs.items():
                 if key == "id":
                     setattr(self, key, value)
-                elif key in attributes:
+                if key in attributes:
                     setattr(self, key, value)
                 else:
                     raise ValueError(f"Invalid attribute: {key}")
+
+    def to_dictionary(self):
+        return ({"id": self.id, "width": self.width, "height": self.height,
+                "x": self.x, "y": self.y})
