@@ -8,6 +8,10 @@ from models.rectangle import Rectangle
 class Square(Rectangle):
     """The Square class"""
     def __init__(self, size, x=0, y=0, id=None):
+        if size < 0:
+            raise ValueError("size must > 0")
+        if not isinstance(size, int):
+            raise TypeError("size must be an integer")
         self.width = size
         self.height = size
         """Initialization method
