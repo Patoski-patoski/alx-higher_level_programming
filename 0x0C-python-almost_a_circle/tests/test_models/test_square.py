@@ -23,14 +23,13 @@ class TestSquare(unittest.TestCase):
         self.assertEqual(self.s4.id, 2)
 
     def test_str_representation(self):
-        """Test string representation of square"""   
+        """Test string representation of square"""
 
         expected_str = "[Square] (2) 4/3 - 5"
         self.assertEqual(str(self.s4), expected_str)
 
     def test_inheritance_from_rect(self):
         """Test inheritance of attributes and behavior from Rectangle"""
-        
         self.assertTrue(hasattr(self.s4, "width"))
         self.assertTrue(hasattr(self.s4, "height"))
         self.assertTrue(hasattr(self.s4, "x"))
@@ -44,7 +43,7 @@ class TestSquare(unittest.TestCase):
         self.s4.id = 20
 
         self.assertTrue(self.s4.width, 10)
-        self.assertTrue(self.s4.height, 10)  # Height should remain equal to width
+        self.assertTrue(self.s4.height, 10)  # Height should ==  width
         self.assertEqual(self.s4.x, 5)
         self.assertEqual(self.s4.y, 7)
         self.assertEqual(self.s4.id, 20)
