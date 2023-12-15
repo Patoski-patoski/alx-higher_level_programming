@@ -43,7 +43,7 @@ class TestSquare(unittest.TestCase):
         self.s4.id = 20
 
         self.assertTrue(self.s4.width, 10)
-        self.assertTrue(self.s4.height, 10)  # Height should ==  width
+        self.assertTrue(self.s4.height, 10)  # Height should == width
         self.assertEqual(self.s4.x, 5)
         self.assertEqual(self.s4.y, 7)
         self.assertEqual(self.s4.id, 20)
