@@ -6,26 +6,25 @@ import unittest
 import io
 import sys
 from models.rectangle import Rectangle
+from models.base import Base
 
 
 class TestRectangle(unittest.TestCase):
     """Test for Rectangle class"""
 
     def setUp(self):
-        """Set up common instances for testing"""
-        self.r1 = Rectangle(1, 2)
-        self.r2 = Rectangle(1, 2, 3)
-        self.r3 = Rectangle(1, 2, 3, 4)
-        self.r4 = Rectangle(1, 2, 3, 4, 12)
-        self.r5 = Rectangle(1, 2, 3, 4, 12)
+        """To be called before the start of any test function"""
+        Base._Base__nb_objects = 0
 
     def test_attributes(self):
         """Test to check if attributes are correctly set"""
-        self.assertEqual(self.r1.width, 1)
-        self.assertEqual(self.r2.height, 2)
-        self.assertEqual(self.r3.x, 3)
-        self.assertEqual(self.r4.y, 4)
-        self.assertEqual(self.r5.id, 12)
+
+        r1 = Rectangle(1, 2, 3, 4, 5)
+        self.assertEqual(r1.width, 1)
+        self.assertEqual(r1.height, 2)
+        self.assertEqual(r1.x, 3)
+        self.assertEqual(r1.y, 4)
+        self.assertEqual(r1.id, 5)
 
     def test_assignment(self):
         """Test to check if id is assigned correctly"""
@@ -36,7 +35,8 @@ class TestRectangle(unittest.TestCase):
 
     def test_type(self):
         """Test to check if id is of type int"""
-        self.assertIsInstance(self.r5.x, int)
+        r1 = Rectangle(1, 2, 3, 4, 5)
+        self.assertIsInstance(r1.x, int)
 
     def test_setters(self):
         """Test for setters and getters"""
@@ -73,9 +73,10 @@ class TestRectangle(unittest.TestCase):
 
     def test_display(self):
         """Test to display hash(#)"""
+        r1 = Rectangle(1, 2)
         capturedoutput = io.StringIO()
         sys.stdout = capturedoutput
-        self.r1.display()
+        r1.display()
         sys.stdout = sys.__stdout__
         expected_output = "#\n#\n"
         self.assertEqual(capturedoutput.getvalue(), expected_output)
