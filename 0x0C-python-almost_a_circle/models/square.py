@@ -26,3 +26,19 @@ class Square(Rectangle):
     def __str__(self):
         """Test to  overriding the __str__ method"""
         return (f"[Square] ({self.id}) {self.x}/{self.y} - {self.width}")
+
+    @property
+    def size(self):
+        """ a function to get size"""
+        return self.width
+
+    @size.setter
+    def size(self, width):
+        """a function to set size"""
+        if not isinstance(width, int) and type(width) is not int:
+            raise TypeError("size must be an integer")
+        elif width < 0:
+            raise ValueError("size must be >= 0")
+        else:
+            self.width = width
+            self.height = height
