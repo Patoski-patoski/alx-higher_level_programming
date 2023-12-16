@@ -8,6 +8,7 @@ from models.rectangle import Rectangle
 from models.square import Square
 import unittest
 
+
 class TestBase(unittest.TestCase):
     """Test cases for Rectangle class"""
 
@@ -43,5 +44,5 @@ class TestBase(unittest.TestCase):
         r1 = Rectangle(10, 7, 2, 8)
         dictionary = r1.to_dictionary()
         json_dictionary = Base.to_json_string([dictionary])
-        expected_outcome = '[{"id": 1, "width": 10, "height": 7, "x": 2, "y": 8}]'
-        self.assertEqual(json_dictionary, expected_outcome)
+        exp_outcome = '[{"id": 1, "width": 10, "height": 7, "x": 2, "y": 8}]'
+        self.assertEqual(json_dictionary, exp_outcome)
