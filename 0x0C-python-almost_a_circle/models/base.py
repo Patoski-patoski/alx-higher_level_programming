@@ -28,4 +28,4 @@ class Base:
         """To return the JSON string representation of list_dictionaries"""
         if list_dictionaries is not None or list_dictionaries is []:
             return json.dumps(list_dictionaries)
-        return []
+        return "[]"
