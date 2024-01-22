@@ -1,3 +1,3 @@
--- a script that creates the MySQL server user user_0d_1.
+-- a script that creates the MySQL server user user_0d_1
 
-CREATE User IF NOT EXISTS 'user_0d_1'@'localhost' IDENTIFIED BY 'user_0d_1_pwd'
+CREATE User IF NOT EXISTS 'user_0d_1'@'localhost' IDENTIFIED BY 'user_0d_1_pwd';
