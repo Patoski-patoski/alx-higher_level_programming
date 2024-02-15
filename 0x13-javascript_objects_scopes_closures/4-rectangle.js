@@ -22,7 +22,7 @@ module.exports = class Rectangle {
     let temp = '';
 
     for (let i = 0; i < this.height; i++) {
-      if (temp.length > 1) {
+      if (temp.length >= 1) {
         temp += '\n';
       }
       for (let j = 0; j < this.width; j++) {
