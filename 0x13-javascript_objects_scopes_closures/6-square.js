@@ -32,7 +32,7 @@ class Square extends s1 {
           temp += '\n';
         }
         for (let j = 0; j < this.width; j++) {
-          temp += 'C';
+          temp += c;
         }
       }
       console.log(temp);
