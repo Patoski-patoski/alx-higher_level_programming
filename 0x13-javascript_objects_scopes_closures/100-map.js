@@ -9,11 +9,7 @@
 const myList = require('./100-data').list;
 
 const multiply = (x, y) => x * y;
-let newList;
-
-for (let i = 0; i < myList.length; i++) {
-  newList = myList.map(multiply, myList[i]);
-}
+let  newList = myList.map((number, index) => number * index);
 
 console.log(myList);
 console.log(newList);
