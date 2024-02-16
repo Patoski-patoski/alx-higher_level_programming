@@ -6,7 +6,7 @@
  * Run ./100-maps.js
  **/
 
-let myList = require('./100-data').list;
+const myList = require('./100-data').list;
 
 const multiply = (x, y) => x * y;
 let newList;
