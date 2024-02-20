@@ -2,5 +2,5 @@
 
 SELECT tv_genres.name, tv_shows.id
 FROM tv_genres
-INNER JOIN tv_shows ON tv_shows.id = tv_genres.id
+LEFT JOIN tv_shows ON tv_shows.id = tv_genres.id
 ORDER BY tv_shows.id DESC;
