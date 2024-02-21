@@ -8,6 +8,4 @@ FROM
     JOIN tv_show_ratings ON tv_show_genres.show_id = tv_show_ratings.show_id
 GROUP BY
     genre
-HAVING
-    rating > 0
 ORDER BY rating DESC;
