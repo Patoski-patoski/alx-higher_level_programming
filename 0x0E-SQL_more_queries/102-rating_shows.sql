@@ -1,8 +1,8 @@
 -- a script that lists all shows from hbtn_0d_tvshows_rate by their rating.
 
-SELECT tv_genres.name AS genre, COUNT(tv_show_genres.show_id) AS number_of_shows
-FROM tv_genres
-JOIN tv_show_genres ON tv_genres.id = tv_show_genres.genre_id
-GROUP BY genre
-HAVING number_of_shows >  0
-ORDER BY number_of_shows DESC;
+SELECT tv_shows.title, SUM(tv_show_ratings.rate) AS rating_sum
+FROM tv_shows
+JOIN tv_show_ratings ON tv_shows.id = tv_show_ratings.show_id
+GROUP BY tv_shows.title
+HAVING rating_sum >  0
+ORDER BY rating_sum DESC;
