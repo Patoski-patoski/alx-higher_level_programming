@@ -7,17 +7,17 @@ if __name__ == "__main__":
     import MySQLdb
     from sys import argv
 
-    db = MySQLdb.connect(
+    my_connect = MySQLdb.connect(
         host='localhost',
         user=argv[1],
         passwd=argv[2],
-        db=argv[3],
+        database=argv[3],
         port=3306
     )
-    ptr = db.cursor()
-    ptr.execute('SELECT * FROM states ORDER BY id ASC')
-    rows = ptr.fetchall()
+    my_cursor = my_connect.cursor()
+    my_cursor.execute('SELECT * FROM states ORDER BY id ASC')
+    rows = my_cursor.fetchall()
     for row in rows:
         print(row)
-    ptr.close()
-    db.close()
+    my_cursor.close()
+    my_connect.close()
