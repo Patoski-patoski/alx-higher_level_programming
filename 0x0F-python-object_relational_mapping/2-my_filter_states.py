@@ -17,10 +17,9 @@ if __name__ == "__main__":
         )
 
     state = argv[4]
-
+    query = "SELECT * FROM states WHERE name = %s ORDER BY id"
     my_cursor = my_connect.cursor()
-    my_cursor.execute("SELECT * FROM states WHERE name = %s "
-                      "ORDER BY id", (state,))
+    my_cursor.execute(query, (state,))
 
     results = my_cursor.fetchall()
     for row in results:
