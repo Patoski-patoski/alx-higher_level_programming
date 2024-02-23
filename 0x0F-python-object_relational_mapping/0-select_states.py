@@ -11,12 +11,12 @@ if __name__ == "__main__":
         host='localhost',
         user=argv[1],
         passwd=argv[2],
-        database=argv[3],
+        db=argv[3],
         port=3306
         )
 
     my_cursor = connection.cursor()
-    my_cursor.execute("SELECT * FROM states")
+    my_cursor.execute("SELECT * FROM states ORDER BY states.id")
 
     results = my_cursor.fetchall()
     for rows in results:
