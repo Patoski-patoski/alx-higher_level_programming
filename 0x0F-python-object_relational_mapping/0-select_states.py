@@ -8,8 +8,8 @@ if __name__ == "__main__":
     from sys import argv
 
     connection = MySQLdb.connect(
-        user=argv[1],
-        password=argv[2],
+        user='root',
+        password='root',
         database='hbtn_0e_0_usa',
         port=3306
         )
