@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 """script that lists all states from the database hbtn_0e_0_usa
-Use (source maintest/0-select_states.sql) to load into the MySQL Server
 Execute by (./0-select_states.py username password database_name)
 """
 if __name__ == "__main__":
@@ -15,7 +14,7 @@ if __name__ == "__main__":
         port=3306
     )
     my_cursor = my_connect.cursor()
-    my_cursor.execute('SELECT * FROM states ORDER BY id ASC')
+    my_cursor.execute('SELECT * FROM states ORDER BY states.id')
     rows = my_cursor.fetchall()
     for row in rows:
         print(row)
