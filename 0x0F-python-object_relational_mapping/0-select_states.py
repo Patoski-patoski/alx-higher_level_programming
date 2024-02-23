@@ -8,9 +8,9 @@ if __name__ == "__main__":
     from sys import argv
 
     connection = MySQLdb.connect(
-        user='root',
-        password='root',
-        database='hbtn_0e_0_usa',
+        user=argv[1],
+        password=argv[2],
+        database=argv[3],
         port=3306
         )
         
@@ -23,4 +23,3 @@ if __name__ == "__main__":
 
     my_cursor.close()
     connection.close()
-
