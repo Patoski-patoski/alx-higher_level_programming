@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+#!/usr/bin/ node
 
 // a file that modifies the value of myVar to 333
 
