@@ -1,0 +1,6 @@
+#!/usr/bin/env node
+
+// a file that modifies the value of myVar to 333
+
+myVar = 333;
+exports.add = myVar
