@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 """ a script that lists all states from the database hbtn_0e_0_usa"""
 
 if __name__ == "__main__":
@@ -14,7 +14,7 @@ if __name__ == "__main__":
         )
 
     my_cursor = my_db.cursor()
-    query = """SELECT * from states ORDER by states.id"""
+    query = "SELECT * from states ORDER by states.id"
     my_cursor.execute(query)
 
     results = my_cursor.fetchall()
