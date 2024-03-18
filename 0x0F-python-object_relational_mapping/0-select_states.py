@@ -14,7 +14,7 @@ if __name__ == "__main__":
         )
 
     my_cursor = my_db.cursor()
-    query = """SELECT * from states ORDER by id"""
+    query = """SELECT * from states ORDER by states.id"""
     my_cursor.execute(query)
 
     results = my_cursor.fetchall()
