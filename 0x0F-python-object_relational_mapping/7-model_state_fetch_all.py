@@ -20,7 +20,7 @@ if __name__ == "__main__":
     session = Session()
 
     # Query all state
-    states = session.query(State).all()
+    states = session.query(State).order_by(State.id.asc()).all()
     for state in states:
         print("{}: {}".format(state.id, state.name))
 
