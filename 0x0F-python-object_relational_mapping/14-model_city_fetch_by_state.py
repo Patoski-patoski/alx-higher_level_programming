@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """ a Python file similar to model_state.py named model_city.py that contains
-the class definition of a City. 
+the class definition of a City.
 A script 14-model_city_fetch_by_state.py that prints all City objects from the
 database hbtn_0e_14_usa:"""
 
@@ -10,7 +10,6 @@ if __name__ == "__main__":
     from sqlalchemy.orm import sessionmaker, Session
     from model_state import Base, State
     from model_city import City
-
 
     # Create the engine to connect to the MySQL server
     engine = create_engine("mysql+mysqldb://{}:{}@localhost:3306/{}".format(
