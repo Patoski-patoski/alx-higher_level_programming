@@ -9,6 +9,7 @@ from sqlalchemy.orm import relationship
 # Define the Base class
 Base = declarative_base()
 
+
 class State(Base):
     """State inherits from Base"""
     __tablename__ = 'states'
@@ -16,4 +17,5 @@ class State(Base):
     name = Column(String(128), nullable=False)
 
     # Defines the relationship to City
-    cities = relationship("City", back_populates="state", cascade="all, delete", passive_deletes=True)
+    cities = relationship("City", back_populates="state",
+                          cascade="all, delete", passive_deletes=True)
