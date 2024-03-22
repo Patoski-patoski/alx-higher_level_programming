@@ -31,9 +31,9 @@ if __name__ == "__main__":
     # Display results
     current_id = None
     for city, state in city_and_state:
-        if current_id is not state.id:
-            print(f"{state.id}: {state.name}")
-            current_id = state.id
+        if current_id is not city.state.id:
+            print(f"{city.state.id}: {city.state.name}")
+            current_id = city.state.id
         print(f"    {city.id}: {city.name}")
 
     session.close()
