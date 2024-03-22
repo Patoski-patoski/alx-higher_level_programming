@@ -2,12 +2,6 @@
 """Lists all State objects and corresponding City objects contained in the
 database"""
 
-import sys
-from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker
-from relationship_state import Base, State
-from relationship_city import City
-
 if __name__ == "__main__":
     import sys
     from sqlalchemy import create_engine
@@ -27,14 +21,13 @@ if __name__ == "__main__":
     session = Session()
 
     # Query for all states
-    states_and_cities = session.query(State, City).join(
-        City, State.cities).order_by(State.id, City.id).all()
+    states_and_cities = session.query(City).order_by(City.id.asc()).all()
 
     current_state_id = None
-    for state, city in states_and_cities:
-        if state.id != current_state_id:
-            print(f"{state.id}: {state.name}")
-            current_state_id = state.id
+    for city in states_and_cities:
+        if city.state.id != current_state_id:
+            print(f"{city.state.id}: {city.state.name}")
+            current_state_id = city.state.id
         print(f"    {city.id}: {city.name}")
 
     session.close()
