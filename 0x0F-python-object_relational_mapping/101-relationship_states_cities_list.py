@@ -25,15 +25,15 @@ if __name__ == "__main__":
     # Use join to get both State and City objects
     # Use order_by to sort by states.id and cities.id
 
-    city_and_state = session.query(City, State).join(
+    city_and_state = session.query(State, City).join(
             City, State.cities).order_by(State.id, City.id).all()
 
     # Display results
     current_id = None
-    for city, state in city_and_state:
-        if current_id is not city.state.id:
-            print(f"{city.state.id}: {city.state.name}")
-            current_id = city.state.id
-        print(f"    {city.id}: {city.name}")
+    for state, city in city_and_state:
+        if current_id is not state.id:
+            print(f"{state.id}: {state.name}")
+            current_id = state.id
+        print(f"\t{city.id}: {city.name}")
 
     session.close()
