@@ -20,9 +20,13 @@ if __name__ == "__main__":
     session = Session()
 
     # Query to get data
-    my_city = session.query(City).order_by(City.id).all()
+    data = session.query(City).order_by(City.id).all()
 
-    for state_rel_ship in my_city:
-        print(f"{state_rel_ship.id}: {state_rel_ship.name} -> {state_rel_ship.state.name}")
+    # using the state relationship to access to the State object
+    # linked to the City object
+
+    for state_obj in data:
+        print("{}: {} -> {}".format(
+            state_obj.id, state_obj.name, state_obj.state.name))
 
     session.close()
