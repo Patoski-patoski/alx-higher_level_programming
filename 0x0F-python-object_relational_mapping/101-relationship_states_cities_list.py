@@ -21,7 +21,8 @@ if __name__ == "__main__":
     session = Session()
 
     # Query for all states
-    states_and_cities = session.query(City).order_by(City.id.asc()).all()
+    states_and_cities = session.query(City).join(
+            State).order_by(City.id.asc()).all()
 
     current_state_id = None
     for city in states_and_cities:
