@@ -34,6 +34,6 @@ if __name__ == "__main__":
         if current_id is not state.id:
             print(f"{state.id}: {state.name}")
             current_id = state.id
-        print(f"\t{city.id}: {city.name}")
+        print(f"    {city.id}: {city.name}")
 
     session.close()
