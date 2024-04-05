@@ -8,4 +8,4 @@ if [ -z "$1" ]; then
 fi
 
 # Send a request to the URL and get the Content-Length Header
-curl -sI  "$1" | awk '/Content-Length/{print $2}'
+curl -sI  "$1" | awk '/Content-Length/ {print $2}'
