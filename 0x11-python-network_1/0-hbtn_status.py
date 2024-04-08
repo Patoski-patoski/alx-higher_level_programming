@@ -2,21 +2,11 @@
 """ The 0-hbtn_status Module """
 
 if __name__ == "__main__":
-    import urllib.request
-
-    url = 'https://alx-intranet.hbtn.io/status'
-
-    with urllib.request.urlopen(url) as response:
-        # Read the content of the response
-        content = response.read()
-        print("Body response")
-
-        # Print the type of the content
-        print("\t- type: {}".format(type(content)))
-
-        # Print the content itself
-        print("\t- content: {}".format(content))
-
-        # Decode the content to a string and print it
-        content_str = content.decode('utf-8')
-        print("\t- utf8 content: {}".format(content_str))
+    import urllib.request as request
+    with request.urlopen('https://alx-intranet.hbtn.io/status') as response:
+        if response:
+            html = response.read()
+            print('Body response:')
+            print(f"\t- type: {type(html)}")
+            print(f"\t- content: {html}")
+            print(f"\t- utf8 content: {html.decode('utf-8')}")
