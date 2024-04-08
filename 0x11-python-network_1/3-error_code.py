@@ -8,10 +8,10 @@ if __name__ == "__main__":
     from sys import argv
 
     try:
-        response = request.urlopen(argv[1])
-        content = response.read()
-        content_str = content.decode('utf-8')
-        print(content_str)
+        with request.urlopen(argv[1]) as response:
+            content = response.read()
+            content_str = content.decode('utf-8')
+            print(content_str)
 
     except error.URLError as err:
         print(f"Error code: {err.code}")
