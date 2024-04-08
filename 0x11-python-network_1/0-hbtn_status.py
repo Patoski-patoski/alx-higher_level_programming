@@ -12,11 +12,11 @@ if __name__ == "__main__":
         print("Body response")
 
         # Print the type of the content
-        print(" - type: {}".format(type(content)))
+        print("\t- type: {}".format(type(content)))
 
         # Print the content itself
-        print(" - content: {}".format(content))
+        print("\t- content: {}".format(content))
 
         # Decode the content to a string and print it
         content_str = content.decode('utf-8')
-        print(" - utf8 content: {}".format(content_str))
+        print("\t- utf8 content: {}".format(content_str))
