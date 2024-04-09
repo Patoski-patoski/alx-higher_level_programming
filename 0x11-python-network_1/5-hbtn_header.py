@@ -6,8 +6,6 @@ if __name__ == "__main__":
     import requests
     from sys import argv
 
-    req = requests.get(argv[1])
-    if 'X-Request-Id' in req.headers:
-        print(req.headers["X-Request-Id"])
-    else:
-        print("X-Request-Id header not foun in the HTTP header")
+    url = argv[1]
+    resp = requests.get(argv[1])
+    print(resp.headers.get("X-Request-Id"))
