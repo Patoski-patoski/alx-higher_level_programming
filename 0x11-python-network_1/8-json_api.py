@@ -8,15 +8,10 @@ if __name__ == "__main__":
     import requests
 
     url = "http://0.0.0.0:5000/search_user"
-    q = argv[1]
-
-    if len(argv) == 1:
-        q = ""
-    else:
-        q = argv[1]
+    my_data = {'q': argv[1] if len(argv) > 1 else ""}
 
     try:
-        resp = requests.post(url, data={'q': q})
+        resp = requests.post(url, data=my_data)
         data = resp.json()
 
         if data:
