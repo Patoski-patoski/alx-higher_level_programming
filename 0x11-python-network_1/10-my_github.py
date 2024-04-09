@@ -14,15 +14,13 @@ Returns:
 if __name__ == "__main__":
     import requests
     from sys import argv
-    from requests.auth import HTTPBasicAuth
 
     username = argv[1]
     password = argv[2]
 
-    my_cred = HTTPBasicAuth(username, password)
+    my_cred = (username, password)
 
     url = "https://api.github.com/user"
-    resp = requests.post(url, auth=my_cred)
+    resp = requests.post(url, auth=my_cred).json()
 
-    user_id = resp.json().get('id')
-    print(user_id)
+    print(resp.get('id'))
