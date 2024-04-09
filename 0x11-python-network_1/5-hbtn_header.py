@@ -7,4 +7,7 @@ if __name__ == "__main__":
     from sys import argv
 
     req = requests.get(argv[1])
-    print(req.headers["X-Request-Id"])
+    if 'X-Request-Id' in req.headers:
+        print(req.headers["X-Request-Id"])
+    else:
+        print("X-Request-Id header not foun in the HTTP header")
