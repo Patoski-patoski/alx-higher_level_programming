@@ -21,6 +21,6 @@ if __name__ == "__main__":
     my_cred = (username, password)
 
     url = "https://api.github.com/user"
-    resp = requests.post(url, auth=my_cred).json()
+    resp = requests.get(url, auth=my_cred).json()
 
     print(resp.get('id'))
