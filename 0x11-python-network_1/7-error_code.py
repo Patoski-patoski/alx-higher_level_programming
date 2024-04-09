@@ -11,7 +11,7 @@ if __name__ == "__main__":
         response = requests.get(argv[1])
         # This will raise an HTTPError if the response was an HTTP error
         response.raise_for_status()
-        print("Request was successful.")
+        print(response.text)
 
     except requests.exceptions.HTTPError as http_err:
         print(f"Error code: {http_err.response.status_code}")
