@@ -12,4 +12,3 @@ if __name__ == "__main__":
     resp = requests.post(argv[1], data=my_data)
 
     print(resp.text)
-
