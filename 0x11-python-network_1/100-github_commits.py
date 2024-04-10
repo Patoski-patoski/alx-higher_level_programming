@@ -14,10 +14,10 @@ if __name__ == "__main__":
     import requests
     from sys import argv
 
-    username = argv[1]
-    owner_name = argv[2]
+   #  username = argv[1]
+   #  owner_name = argv[2]
 
-    url = f"https://api.github.com/repos/{username}/{owner_name}/commits"
+    url = f"https://api.github.com/repos/{argv[1]}/{argv[2]}/commits"
     resp = requests.get(url)
     commits = resp.json()
 
