@@ -25,5 +25,5 @@ if __name__ == "__main__":
     for i in range(10):
         commit_data = resp.json()[i]
         commit_sha = commit_data.get('sha')
-        commiter_name = commit_data.get('commit').get('committer').get('name')
+        commiter_name = commit_data.get('commit').get('author').get('name')
         print(f"{commit_sha}: {commiter_name}")
