@@ -22,7 +22,7 @@ if __name__ == "__main__":
 
     info = resp.json()
 
-    for i in range(10):
+    for i in range(10, 0, -1):
         commit_data = resp.json()[i]
         commit_sha = commit_data.get('sha')
         commiter_name = commit_data.get('commit').get('author').get('name')
