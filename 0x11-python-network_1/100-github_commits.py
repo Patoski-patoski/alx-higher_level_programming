@@ -23,7 +23,7 @@ if __name__ == "__main__":
     info = resp.json()
 
     for i in range(10):
-        commit_data = info[i]
+        commit_data = resp.json()[i]
         commit_sha = commit_data['sha']
         commiter_name = commit_data['commit']['committer']['name']
         print(f"{commit_sha} {commiter_name}")
