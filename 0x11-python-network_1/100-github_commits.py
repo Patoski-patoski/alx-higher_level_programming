@@ -1,31 +1,20 @@
 #!/usr/bin/python3
+"""A Python script that list 10 commits (from the most recent to oldest) of
+the repository
 """
-A Python script that takes 2 arguments in order to solve this challenge
+import sys
+import requests
 
-Arg:
-    argv[1]: repository name
-    argv[2]: owner_name
-
-Return:
-    10 commits sha and owner names
-"""
 
 if __name__ == "__main__":
-    import requests
-    from sys import argv
-
-   #  username = argv[1]
-   #  owner_name = argv[2]
-
-    url = f"https://api.github.com/repos/{argv[1]}/{argv[2]}/commits"
-    resp = requests.get(url)
-    commits = resp.json()
+    url = "https://api.github.com/repos/{}/{}/commits".format(
+            sys.argv[2], sys.argv[1])
 
     commits = requests.get(url).json()
     try:
         for i in range(10):
             print("{}: {}".format(
-                commits[i].get("sha"),
-                commits[i].get("commit").get("author").get("name")))
+            commits[i].get("sha"),
+            commits[i].get("commit").get("author").get("name")))
     except IndexError:
         pass
