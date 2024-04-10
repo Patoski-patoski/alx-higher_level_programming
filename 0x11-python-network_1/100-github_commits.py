@@ -10,8 +10,6 @@ if __name__ == "__main__":
     from sys import argv
     import requests
 
-    repo_name = argv[1]
-    owner_name = argv[2]
     url = "https://api.github.com/repos/{}/{}/commits".format(argv[1], argv[2])
 
     commits = requests.get(url).json()
