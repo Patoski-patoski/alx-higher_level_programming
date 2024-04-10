@@ -12,7 +12,7 @@ if __name__ == "__main__":
 
     repo_name = argv[1]
     owner_name = argv[2]
-    url = f"https://api.github.com/repos/{repo_name}/{owner_name}/commits"
+    url = "https://api.github.com/repos/{}/{}/commits".format(argv[1], argv[2])
 
     commits = requests.get(url).json()
 
