@@ -7,8 +7,6 @@ import requests
 
 
 if __name__ == "__main__":
-    import sys
-    import requests
 
     url = "https://api.github.com/repos/{}/{}/commits".format(
             sys.argv[1], sys.argv[2])
