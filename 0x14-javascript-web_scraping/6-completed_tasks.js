@@ -12,8 +12,8 @@ const urlpath = process.argv[2];
 
 request(urlpath, (error, response, body) => {
   if (error) {
-	  console.log(error);
-	  return;
+    console.log(error);
+    return;
   }
 
   const tasks = JSON.parse(body);
