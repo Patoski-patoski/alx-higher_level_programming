@@ -10,8 +10,8 @@ const request = require('request');
 const fs = require('fs');
 const filePath = process.argv[3];
 
-if (process.argv.length === 21) {
-  console.error('Usage: file and second argument for link', process.argv[2]);
+if (process.argv.length !== 3) {
+  console.error('Usage: argument length must be ', process.argv.length);
   process.exit(1);
 }
 
