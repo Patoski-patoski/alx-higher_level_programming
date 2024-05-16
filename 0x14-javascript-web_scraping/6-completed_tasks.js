@@ -6,8 +6,6 @@
  **/
 
 const request = require('request');
-const completedTask = {};
-
 const urlpath = process.argv[2];
 
 request(urlpath, (error, response, body) => {
