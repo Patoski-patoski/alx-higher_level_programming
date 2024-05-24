@@ -30,7 +30,5 @@ $(function () {
                     console.error(error);
             },
         })
-        alert($language_code);
-        alert("Done");
     })
 });
